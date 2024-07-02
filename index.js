@@ -1,7 +1,8 @@
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
-let start = document.getElementById("start-button")
-let restart = document.getElementById("restart-button")
+let start = document.getElementById("start-button");
+let restart = document.getElementById("restart-button");
+
 // Making snake
 let snake = [
   { x: 150, y: 150 },
@@ -16,6 +17,7 @@ let dx = 10;
 let dy = 0;
 let foodX;
 let foodY;
+let gameInterval;
 
 function drawSnakePart(snakePart) {
   ctx.fillStyle = "lightgreen";
@@ -51,11 +53,18 @@ function clearCanvas() {
 
 function main() {
   if (didEndGame()) {
+    clearInterval(gameInterval); 
+
     alert("Game Over!");
+
+    // Activate restart button 
+    restart.disabled = false;
+    restart.addEventListener("click", restartGame);
+    
     return;
   }
 
-  setTimeout(function onTick() {
+  gameInterval = setTimeout(function onTick() {
     clearCanvas();
     drawFood();
     advanceSnake();
@@ -131,11 +140,29 @@ function didEndGame() {
   return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
 }
 
-function startGame(){
-createFood();
-main();
+function startGame() {
+  restart.disabled = true;
+  createFood();
+  main();
 }
-let gameInterval;
-function restartGame(){}
+
+function restartGame() {
+  // Reset all games variables 
+  snake = [
+    { x: 150, y: 150 },
+    { x: 140, y: 150 },
+    { x: 130, y: 150 },
+    { x: 120, y: 150 },
+    { x: 110, y: 150 },
+  ];
+  score = 0;
+  dx = 10;
+  dy = 0;
+  document.getElementById("score").innerHTML = `Score: ${score}`;
+  restart.disabled = true;
+  startGame();
+}
 
 start.addEventListener("click", startGame);
+
+restart.disabled = true;
