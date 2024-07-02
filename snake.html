@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Snake game</title>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="score">0</div><canvas id="gameCanvas" width="300" height="300"></canvas>
-    <script src="index.js">
-     
-    </script>
+    <div class="wrapper">
+      <div class="container">
+        <div id="score">Score: 0</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <button id="start-button">Start game</button>
+        <button id="restart-button">Restart</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

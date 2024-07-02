@@ -1,7 +1,7 @@
-
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
-
+let start = document.getElementById("start-button")
+let restart = document.getElementById("restart-button")
 // Making snake
 let snake = [
   { x: 150, y: 150 },
@@ -131,5 +131,11 @@ function didEndGame() {
   return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
 }
 
+function startGame(){
 createFood();
 main();
+}
+let gameInterval;
+function restartGame(){}
+
+start.addEventListener("click", startGame);

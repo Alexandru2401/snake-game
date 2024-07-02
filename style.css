@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#score{
+    margin: 20px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#start-button {
+    margin: 10px;
+    background-color: #34811c;
+    color: white;
+    width: 110px;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+#restart-button {
+    background-color: #241c81;
+    color: white;
+    width: 110px;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
