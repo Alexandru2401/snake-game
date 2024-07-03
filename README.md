@@ -21,17 +21,17 @@ This project was build by using HTML5, Css3 and JavaScript.
 
 Structure of the project
 snake-game/
-├── css/
-│   └── styles.css
-├── js/
-│   └── script.js
-├── snake.html
-├── README.md
+1.├── css/
+2.│   └── styles.css
+3.├── js/
+4.│   └── script.js
+5.├── snake.html
+6.├── README.md
 
 
 Features
 Some features that will be implementing in the futured
--score track;
--increasing dificulty at every 100 points;
+1. score track;
+2. increasing dificulty at every 100 points;
 
 
